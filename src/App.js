@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     axios({
-      url: 'http://localhost:8080/....',
+      url: 'http://localhost:8080/',
       method: 'GET'
     })
     .then((res) => {
@@ -22,7 +22,6 @@ function App() {
 
   return (
     <div className="App">
-      짜잔
       {test}
     </div>
   );
