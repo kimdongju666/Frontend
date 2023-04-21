@@ -26,6 +26,7 @@ function App() {
   
 
   return (
+
     <div>
       <BrowserRouter>
         <Header/>
@@ -39,6 +40,7 @@ function App() {
         </Routes>
       </div>
       </BrowserRouter>
+
     </div>
     
   );
