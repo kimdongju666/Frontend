@@ -1,6 +1,11 @@
 import './App.css';
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
+import Header from './Components/Header'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignIn from './Components/SignIn';
+import Login from './Components/Login';
+
 
 function App() {
   const [test, setTest] = useState("");
@@ -21,9 +26,23 @@ function App() {
   
 
   return (
-    <div className="App">
-      {test}
+
+    <div>
+      <BrowserRouter>
+        <Header/>
+      <div className="App">
+        <Routes>
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signin" element={<SignIn />} />
+        </Routes>
+      </div>
+      </BrowserRouter>
+
     </div>
+    
   );
 }
 
