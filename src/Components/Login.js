@@ -13,7 +13,7 @@ function Login() {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/user/login", {
+      .post("http://localhost:8080", {
         userId: userId,
         password: password,
         userName: userName,
