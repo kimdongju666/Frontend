@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 function SignIn() {
-  const [username, setusername] = useState('');
+    const [username, setusername] = useState('');
     const [userId, setUserId] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -67,15 +67,15 @@ function SignIn() {
         }
     }
     const handleEmail = (e) => {
-      setEmail(e.target.value);
-      const regex =
+        setEmail(e.target.value);
+        const regex =
         /^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z0-9]+/;
-      if (regex.test(email)) {
-          setEmailValid(true);
-      } else {
-          setEmailValid(false);
-      }
-  }
+        if (regex.test(email)) {
+            setEmailValid(true);
+        } else {
+            setEmailValid(false);
+        }
+    }
 
     useEffect(() => {
         if(nameValid && idValid && pwValid) {
@@ -84,7 +84,9 @@ function SignIn() {
         }
         setNotAllow(true);
     }, [nameValid , idValid , pwValid]);
-  return (
+
+    
+    return (
     <div className='page'>
             <div className="titleWrap">
                 회원 가입
@@ -168,7 +170,7 @@ function SignIn() {
             </button>
 
         </div>
-  )
+    )
 }
 
 export default SignIn;
