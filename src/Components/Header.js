@@ -11,23 +11,23 @@ function Header() {
         </Link>
         <ul class = "center">
           <li>
-            <Link className='menu1' to='/menu1'>
-              메뉴 1
+            <Link className='hospital' to='/hospital'>
+              내 근처 진료소
             </Link>
           </li>
           <li>
-            <Link className='menu2' to='/menu2'>
-              메뉴 2
+            <Link className='solution' to='/solution'>
+              산재 예방 방법
             </Link>
           </li>
           <li>
-            <Link className='menu3' to='/menu3'>
-              메뉴 3
+            <Link className='danger' to='/danger'>
+              위험성 평가
             </Link>
           </li>
           <li>
-            <Link className='menu4' to='/menu4'>
-              메뉴 4
+            <Link className='community' to='/community'>
+              커뮤니티
             </Link>
           </li>
         </ul>

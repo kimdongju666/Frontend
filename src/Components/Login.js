@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Header from "./Header";
 
 function Login() {
   const [userId, setUserId] = useState("");
@@ -61,6 +62,7 @@ function Login() {
 
   return (
     <>
+      <Header />
       <div className="page">
         <div className="titleWrap">로그인</div>
         <div className="contentWrap">
