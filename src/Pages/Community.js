@@ -5,7 +5,7 @@ function Community() {
   return (
     <>
     <Header />
-    <div>Hospital</div>
+    <div>Community</div>
     </>
   )
 }
