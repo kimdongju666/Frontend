@@ -5,7 +5,7 @@ function Solution() {
   return (
     <>
     <Header />
-    <div>Hospital</div>
+    <div>Solution</div>
     </>
   )
 }

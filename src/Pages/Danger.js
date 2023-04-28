@@ -5,7 +5,7 @@ function Danger() {
   return (
     <>
     <Header />
-    <div>Hospital</div>
+    <div>Danger</div>
     </>
   )
 }
