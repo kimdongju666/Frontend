@@ -25,9 +25,19 @@ function SliderContainer() {
     { src: img4 },
     { src: img5 },
   ];
+const swiperStyle = {
+  position : "relative",
+  width: "85%",
+  height : "600px",
+  border: "1px solid lightgray",
+  borderRadius: "10px",
+  marginTop: "10px",
+  backgroundColor: "rgba(35, 115, 225)"
+}
+
   return (
     <>
-      <Swiper
+      <Swiper style={swiperStyle}
         effect={"slide"}
         autoplay={{
           delay: 3000,
@@ -48,7 +58,7 @@ function SliderContainer() {
         {items.map((item, idx) => {
           return (
             <SwiperSlide key={idx} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <img src={item.src} alt="슬라이드 이미지" style={{width: "500px", height: "600px"}}/>
+              <img src={item.src} alt="슬라이드 이미지" style={{width: "80%", height: "400px", borderRadius: "10px"}}/>
             </SwiperSlide>
           );
         })}
