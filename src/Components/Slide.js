@@ -27,11 +27,11 @@ function SliderContainer() {
   ];
 const swiperStyle = {
   position : "relative",
-  width: "85%",
-  height : "600px",
+  width: "75%",
+  height : "400px",
   border: "1px solid lightgray",
   borderRadius: "10px",
-  marginTop: "10px",
+  marginTop: "50px",
   backgroundColor: "rgba(35, 115, 225)"
 }
 
@@ -58,7 +58,7 @@ const swiperStyle = {
         {items.map((item, idx) => {
           return (
             <SwiperSlide key={idx} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <img src={item.src} alt="슬라이드 이미지" style={{width: "80%", height: "400px", borderRadius: "10px"}}/>
+              <img src={item.src} alt="슬라이드 이미지" style={{width: "80%", height: "300px", borderRadius: "10px"}}/>
             </SwiperSlide>
           );
         })}

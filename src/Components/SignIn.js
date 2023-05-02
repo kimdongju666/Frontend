@@ -52,7 +52,7 @@ function SignIn() {
   };
   const handlePw = (e) => {
     setPassword(e.target.value);
-    const regex = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]|.*[0-9]).{8,24}$/;
+    const regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$/;
     if (regex.test(password)) {
       setPwValid(true);
     } else {
