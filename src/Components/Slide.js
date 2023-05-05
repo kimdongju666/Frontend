@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import '../CSS/Slide.css'
@@ -10,43 +10,40 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 // import required modules
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
-import img1 from '../Images/쏘쥬.jpg';
-import img2 from '../Images/1.jpg';
-import img3 from '../Images/2.jpg';
-import img4 from '../Images/이력서 사진.jpg';
-import img5 from '../Images/쏘주2.jpg';
 
 
 function SliderContainer() {
-  const items = [
-    { src: img1 },
-    { src: img2 },
-    { src: img3 },
-    { src: img4 },
-    { src: img5 },
-  ];
+
 const swiperStyle = {
   position : "relative",
-  width: "75%",
-  height : "400px",
-  border: "1px solid lightgray",
-  borderRadius: "10px",
-  marginTop: "50px",
-  backgroundColor: "rgba(35, 115, 225)"
+  width: "1400px",
+  height : "665px",
+}
+const wrapperStyle = {
+  backgroundColor : "rgba(35, 115, 225)",
+/*  */
+}
+const slideStyle = {
+  display : "flex",
+  justifyContent : "center",
+  alignItems : "center",
+  width : "80%",
+  height : "300px",
 }
 
   return (
-    <>
+    <div className="wrapper" style={wrapperStyle}>
       <Swiper style={swiperStyle}
         effect={"slide"}
         autoplay={{
-          delay: 3000,
+          delay: 1000000,
           disableOnInteraction: false,
         }}
         spaceBetween={10}
         slidesPerView={3}
         centeredSlides={true}
-        navigation={{}}
+        navigation={{
+        }}
         pagination={{
           clickable: false,
         }}
@@ -55,15 +52,12 @@ const swiperStyle = {
         loop={true}
         
       >
-        {items.map((item, idx) => {
-          return (
-            <SwiperSlide key={idx} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <img src={item.src} alt="슬라이드 이미지" style={{width: "80%", height: "300px", borderRadius: "10px"}}/>
-            </SwiperSlide>
-          );
-        })}
+        <SwiperSlide style={slideStyle}>Slide 1</SwiperSlide>
+        <SwiperSlide style={slideStyle}>Slide 2</SwiperSlide>
+        <SwiperSlide style={slideStyle}>Slide 3</SwiperSlide>
+        <SwiperSlide style={slideStyle}>Slide 4</SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 

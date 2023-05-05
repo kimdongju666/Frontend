@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 
 function Login() {
-  const [userId, setUserId] = useState("");
+  const [userid, setUserId] = useState("");
   const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
 
   const [idValid, setIdValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
@@ -13,16 +14,18 @@ function Login() {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/members/login", {
-        userId: userId,
+      .post("/members/login", {
+        userid: userid,
         password: password,
+        userName: userName,
       })
       .then((response) => {
         console.log(response);
         alert("로그인에 성공했습니다");
-        localStorage.setItem("id", response.data.userId);
+        localStorage.setItem("id", response.data.userid);
         localStorage.setItem("pw", response.data.password);
-/*         window.location.replace("http://localhost:3000/LoginHome"); */
+        localStorage.setItem("userName", response.data.userName);
+        window.location.replace("http://localhost:3000/LoginHome");
       })
 
       .catch(function (error) {
@@ -33,7 +36,7 @@ function Login() {
   const handleId = (e) => {
     setUserId(e.target.value);
     const regex = /^[a-z0-9_]{4,12}$/;
-    if (regex.test(userId)) {
+    if (regex.test(userid)) {
       setIdValid(true);
     } else {
       setIdValid(false);
@@ -41,7 +44,7 @@ function Login() {
   };
   const handlePw = (e) => {
     setPassword(e.target.value);
-    const regex = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]|.*[0-9]).{8,24}$/;
+    const regex = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]|.*[0-9]).{7,24}$/;
     if (regex.test(password)) {
       setPwValid(true);
     } else {
@@ -69,12 +72,12 @@ function Login() {
               type="text"
               className="input"
               placeholder="4~12자 영문소문자, 숫자 입력"
-              value={userId}
+              value={userid}
               onChange={handleId}
             />
           </div>
           <div className="errorMessage">
-            {!idValid && userId.length > 0 && (
+            {!idValid && userid.length > 0 && (
               <div>올바른 아이디를 입력해주세요.</div>
             )}
           </div>
