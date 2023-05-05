@@ -9,6 +9,8 @@ import Hospital from './Pages/Hospital';
 import Solution from './Pages/Solution';
 import Danger from './Pages/Danger';
 import Community from './Pages/Community';
+import LoginHeader from './Components/LoginHeader';
+import LoginHome from './Components/LoginHome';
 
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
           <Route path="/solution" element={<Solution />} />
           <Route path="/danger" element={<Danger />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/loginheader" element={<LoginHeader />} />
+          <Route path="/loginhome" element={<LoginHome />} />
         </Routes>
       </div>
       </BrowserRouter>

@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
+import '../CSS/SignIn.css';
 
 function SignIn() {
   const [username, setusername] = useState("");
-  const [userId, setUserId] = useState("");
+  const [userid, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
@@ -17,9 +18,9 @@ function SignIn() {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/members/new", {
+      .post("/members/join", {
         username: username,
-        userId: userId,
+        userid: userid,
         password: password,
         email: email,
       })
@@ -44,7 +45,7 @@ function SignIn() {
   const handleId = (e) => {
     setUserId(e.target.value);
     const regex = /^[a-z0-9_]{4,12}$/;
-    if (regex.test(userId)) {
+    if (regex.test(userid)) {
       setIdValid(true);
     } else {
       setIdValid(false);
@@ -108,12 +109,12 @@ function SignIn() {
               type="text"
               className="input"
               placeholder="4~12자 영문소문자, 숫자 입력"
-              value={userId}
+              value={userid}
               onChange={handleId}
             />
           </div>
           <div className="errorMessage">
-            {!idValid && username.length > 0 && (
+            {!idValid && userid.length > 0 && (
               <div>올바른 아이디를 입력해주세요.</div>
             )}
           </div>
