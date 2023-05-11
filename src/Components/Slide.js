@@ -49,7 +49,7 @@ const slideStyle = {
         }}
         modules={[Navigation, EffectFade, Pagination, Autoplay]}
         className="mySwiper"
-        loop={true}
+
         
       >
         <SwiperSlide style={slideStyle}>Slide 1</SwiperSlide>

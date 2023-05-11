@@ -1,5 +1,5 @@
 .swiper {
-  --swiper-theme-color: white;
+  --swiper-theme-color: rgb(255, 0, 0);
 }
 .swiper-slide {
   background-color: #fff;
@@ -7,4 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.swiper-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
