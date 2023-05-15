@@ -11,6 +11,7 @@ import Danger from './Pages/Danger';
 import Community from './Pages/Community';
 import LoginHeader from './Components/LoginHeader';
 import LoginHome from './Components/LoginHome';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -50,7 +51,6 @@ function App() {
         </Routes>
       </div>
       </BrowserRouter>
-      
     </div>
     
   );
