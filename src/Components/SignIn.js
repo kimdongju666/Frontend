@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import '../CSS/SignIn.css';
+import Footer from "./Footer";
 
 function SignIn() {
   const [username, setusername] = useState("");
@@ -165,6 +166,7 @@ function SignIn() {
           확인
         </button>
       </div>
+
     </>
   );
 }

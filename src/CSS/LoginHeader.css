@@ -46,7 +46,7 @@ header ul.menu {
 header ul.menu li a {
   padding: 0 10px;
   font-size: 20px;
-  display: block;
+  display: flex;
   align-items: center;
   color: black;
   opacity: 0.8;
@@ -56,10 +56,10 @@ header ul.menu li a:hover {
   opacity: 1;
   transition: 0.5s;
 }
-header ul.menu li p {
+header p {
   padding: 0 10px;
-  font-size: 20px;
-  display: block;
+  font-size: 16px;
+  display: flex;
   align-items: center;
   color: black;
   opacity: 0.8;
@@ -73,7 +73,7 @@ header ul.menu li p {
 	padding: 0px;
 	cursor:pointer;
   color:#fff;
-  background-color: #616161;
+  background-color: rgba(35, 115, 225);
   width: 5rem;
   height: 2rem;
   border-radius: 0.4rem;

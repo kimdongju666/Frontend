@@ -1,15 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
+import Footer from "./Footer";
 
 function Login() {
   const [userid, setUserId] = useState("");
   const [password, setPassword] = useState("");
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
 
   const [idValid, setIdValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
+
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -17,14 +19,15 @@ function Login() {
       .post("/members/login", {
         userid: userid,
         password: password,
-        userName: userName,
+        username: username,
       })
       .then((response) => {
         console.log(response);
         alert("로그인에 성공했습니다");
-        localStorage.setItem("id", response.data.userid);
-        localStorage.setItem("pw", response.data.password);
-        localStorage.setItem("userName", response.data.userName);
+        localStorage.setItem("id", response.data.data.userid);
+        localStorage.setItem("pw", response.data.data.password);
+        localStorage.setItem("username", response.data.data.username);
+        localStorage.setItem("authToken", response.data.data.jwtToken);
         window.location.replace("http://localhost:3000/LoginHome");
       })
 
@@ -33,6 +36,7 @@ function Login() {
       });
   };
 
+  
   const handleId = (e) => {
     setUserId(e.target.value);
     const regex = /^[a-z0-9_]{4,12}$/;
@@ -110,6 +114,7 @@ function Login() {
           확인
         </button>
       </div>
+
     </>
   );
 }

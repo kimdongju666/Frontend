@@ -17,7 +17,7 @@ function SliderContainer() {
 const swiperStyle = {
   position : "relative",
   width: "1400px",
-  height : "665px",
+  height : "465px",
 }
 const wrapperStyle = {
   backgroundColor : "rgba(35, 115, 225)",
