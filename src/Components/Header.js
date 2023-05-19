@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../CSS/Header.css';
 
 function Header() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDropdownOpen(false);
+  };
+  
   return (
     <header>
       <div className="inner">
@@ -25,10 +35,19 @@ function Header() {
               위험성 평가
             </Link>
           </li>
-          <li>
+          <li className='dropDown'  onMouseOver={handleMouseEnter}
+            >
             <Link className='community' to='/community'>
               커뮤니티
             </Link>
+            {isDropdownOpen && (
+              <div className='dropDownMenu'  onMouseOut={handleMouseLeave}>
+                <Link className='suggestions' to='/suggestions'>
+                  건의사항
+                </Link>
+            </div>
+            )}
+            
           </li>
         </ul>
         <ul class="menu">

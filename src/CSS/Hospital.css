@@ -1,0 +1,23 @@
+.circle {
+  width: 87px;
+  height: 87px;
+  background-color: #FDE04A;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.circle div {
+  position: absolute;
+  text-align: center;
+}
+.content {
+  display: flex;
+  gap: 50px;
+}
+h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -11,7 +11,7 @@ import Danger from './Pages/Danger';
 import Community from './Pages/Community';
 import LoginHeader from './Components/LoginHeader';
 import LoginHome from './Components/LoginHome';
-import Footer from './Components/Footer';
+import Suggestions from './Pages/Suggestions';
 
 
 function App() {
@@ -48,6 +48,7 @@ function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/loginheader" element={<LoginHeader />} />
           <Route path="/loginhome" element={<LoginHome />} />
+          <Route path="/suggestions" element={<Suggestions />} />
         </Routes>
       </div>
       </BrowserRouter>
