@@ -1,0 +1,58 @@
+.inner-container {
+  display: flex;
+  max-width: 1400px;
+  width: 1400px;
+  margin: 0 auto;
+  padding: 70px 0 0;
+}
+.content-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 60px;
+}
+
+.input-text {
+  outline: 1px solid #ddd;
+  border: 0;
+  border-radius: 8px;
+  width: 90%;
+  color: black;
+  font-size: 16px;
+  height: 52px;
+  line-height: 28px;
+}
+
+.search-button {
+  min-width: 120px;
+  height: 52px;
+  background-color: #DFE8EE;
+  color: #5f8caa;
+  border: 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  padding: 14px 0;
+
+}
+
+.GridContainer {
+  margin: 150px auto 79px;
+  padding: 0;
+  width: 1400px;
+  display: grid;
+  grid-gap: 32px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.GridItem {
+  background-color: white;
+  height: 285px;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+}
+.GridItem:hover {
+  border: 2px solid rgba(35, 115, 225);
+}

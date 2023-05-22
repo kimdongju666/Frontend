@@ -7,12 +7,7 @@ function Hospital() {
   return (
     <>
     <Header />
-    <div className='content'>
-      <div className='circle'>
-        <div>1</div>
-      </div>
-      <h4>제목을 입력하세요</h4>
-    </div>
+    
     <Footer />
     </>
     

@@ -35,7 +35,7 @@ function Header() {
               위험성 평가
             </Link>
           </li>
-          <li className='dropDown'  onMouseOver={handleMouseEnter}
+          <li className='dropDown'  onMouseOver={handleMouseEnter} 
             >
             <Link className='community' to='/community'>
               커뮤니티
