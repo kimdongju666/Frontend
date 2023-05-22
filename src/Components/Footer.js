@@ -13,6 +13,8 @@ function Footer() {
           &copy; <span> {thisyear()}</span> Kwon Jong Seok BABO. All
           Rights Reserved.
         </p>
+
+        
       </div>
     </footer>
   )

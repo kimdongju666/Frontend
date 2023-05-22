@@ -1,16 +1,15 @@
 import React from 'react'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import "../CSS/Hospital.css";
 
-function Hospital() {
+function Suggestions() {
   return (
     <>
-    <Header />
-    
-    <Footer />
+      <Header />
+      <div>Suggestions</div>
+      <Footer />
     </>
     
   )
 }
-export default Hospital;
+export default Suggestions;
