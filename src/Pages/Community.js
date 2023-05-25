@@ -2,9 +2,10 @@ import React from 'react'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import '../CSS/Community.css';
+import CommunityItem from '../Components/CommunityItem';
 
 function Community() {
-  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+  const items = [<CommunityItem /> , <CommunityItem /> , <CommunityItem />,<CommunityItem /> , <CommunityItem /> , <CommunityItem />, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
   return (
     <>
     <Header />

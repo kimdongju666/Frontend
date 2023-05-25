@@ -5,6 +5,7 @@ import '../CSS/Home.css';
 import Grid from './Grid';
 import Footer from './Footer';
 
+
 function Home() {
   return (
     <>
