@@ -8,7 +8,6 @@ function Hospital() {
   return (
     <>
     <Header />
-    <CommunityItem />
     <Footer />
     </>
     

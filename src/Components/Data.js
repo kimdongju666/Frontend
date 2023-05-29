@@ -5,4 +5,3 @@ export const dummyData = [
     "date": "23.05.23"
   },
 ];
-  
