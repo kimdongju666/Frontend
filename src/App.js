@@ -12,6 +12,7 @@ import Community from './Pages/Community';
 import LoginHeader from './Components/LoginHeader';
 import LoginHome from './Components/LoginHome';
 import Suggestions from './Pages/Suggestions';
+import ScrollToTop from './ScrollTop';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
     <div>
       
       <BrowserRouter>
+      <ScrollToTop />
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />

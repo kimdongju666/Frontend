@@ -1,0 +1,21 @@
+.LinkContainer {
+  background-color: rgba(35, 115, 225);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+
+
+}
+
+.linkText {
+  color: black;
+
+}
+
+.LinkContainer:hover {
+  background-color: rgb(135, 180, 243);
+  transition: .7s;
+}

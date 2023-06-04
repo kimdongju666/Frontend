@@ -1,3 +1,6 @@
+body{
+  background-color: rgb(244, 248, 254);
+}
 .GridContainer {
   margin: 150px auto 79px;
   padding: 0 25px;
@@ -15,4 +18,8 @@
 }
 .GridItem:hover {
   border: 2px solid rgba(35, 115, 225);
+}
+
+.GridItem:nth-last-child(1):hover {
+  border: none;
 }
