@@ -5,14 +5,19 @@ import '../CSS/Community.css';
 import CommunityItem from '../Components/CommunityItem';
 import add from '../Images/add.png'
 import CommunityModal from '../Components/CommunityModal';
+import CommunityItemModal from '../Components/CommunityItemModal';
 
 function Community() {
   const items = [<CommunityItem /> , <CommunityItem /> , <CommunityItem />,<CommunityItem /> , <CommunityItem /> , <CommunityItem />, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
   const [showModal, setShowModal] = useState(false);
+  const [showItemModal, setShowItemModal] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
   const handleButtonClick = () => {
     setShowModal(true); 
+  }
+  const handleItemClick = () => {
+    setShowItemModal(true);
   }
 
   const handleModalClose = () => {
@@ -34,6 +39,7 @@ function Community() {
   return (
     <>
     <CommunityModal show={showModal}  onHide={() => setShowModal(false)}/>
+    <CommunityItemModal show={showItemModal}  onHide={() => setShowItemModal(false)}/>
     <Header />
     <div className='inner-container'>
       <div className='content'>
@@ -50,6 +56,7 @@ function Community() {
             {items.map((item, key) => (
               <div
                 className="GridItem"
+                onClick={handleItemClick}
                 key={key}
               >
                 {item}
