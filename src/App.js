@@ -17,20 +17,6 @@ import ScrollToTop from './ScrollTop';
 
 function App() {
   const [test, setTest] = useState("");
-
-  function callBack(str) {
-    setTest(str);
-  }
-
-  useEffect(() => {
-    axios({
-      url: 'http://localhost:8080/',
-      method: 'GET'
-    })
-    .then((res) => {
-      callBack(res.data);
-    })
-  }, []);
   
 
   return (
