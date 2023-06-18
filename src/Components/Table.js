@@ -1,4 +1,5 @@
 import React from 'react'
+import '../CSS/CommonTable.css';
 
 const Table = props => {
   const { headersName, children } = props;
