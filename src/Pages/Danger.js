@@ -14,7 +14,7 @@ function Danger() {
     <div className='container'>
       <div className='inner'>
         <h2>위험성 평가 기업 검색</h2>
-        <Search />
+        {/* <Search /> */}
         {/* <div className='content-search'>
           <input type='text' id='content-search' placeholder='검색어를 입력해주세요.' className='input-text'></input>
           <button className='search-button'>검색</button>
