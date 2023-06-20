@@ -14,7 +14,7 @@ function Header() {
         <ul class = "center">
           <li>
             <Link className='hospital' to='/hospital'>
-              내 근처 진료소
+              산재 지정 병원 위치
             </Link>
           </li>
           <li>
