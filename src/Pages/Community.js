@@ -43,13 +43,13 @@ function Community() {
     <Header />
     <div className='inner-container'>
       <div className='content'>
-        <h2>커뮤니티</h2>
+        <h2>Community</h2>
         <div className='content-search'>
-          <input type='text' id='content-search' placeholder='검색어를 입력해주세요.' className='input-text'></input>
-          <button className='search-button'>검색</button>
+          <input type='text' id='content-search' placeholder='Please enter a search word' className='input-text'></input>
+          <button className='search-button'>Serch</button>
         </div>
         <div className='add-btn'>
-          <button className='add-button' onClick={handleButtonClick}><img src={add} alt='add'></img>글쓰기</button>
+          <button className='add-button' onClick={handleButtonClick}><img src={add} alt='add'></img>Write</button>
         </div>
         <div className='content-list'>
         <div className="GridContainer">

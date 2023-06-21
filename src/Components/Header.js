@@ -9,39 +9,39 @@ function Header() {
     <header>
       <div className="inner">
         <Link className='site-name' to='/'>
-        <h3> 이름 </h3>
+        <h3> Help Foreigner </h3>
         </Link>
         <ul class = "center">
           <li>
             <Link className='hospital' to='/hospital'>
-              산재 지정 병원 위치
+              Industrial aid hospital
             </Link>
           </li>
           <li>
             <Link className='solution' to='/solution'>
-              산재 예방 방법
+              Industrial Accident Prevention Manual
             </Link>
           </li>
           <li>
             <Link className='danger' to='/danger'>
-              위험성 평가
+              Dangerous Safety Workplace
             </Link>
           </li>
           <li>
             <Link className='community' to='/community'>
-              커뮤니티
+              Community
             </Link>
           </li>
         </ul>
         <ul class="menu">
           <li>
             <Link className='header-nav-item' to='/signin'>
-              회원 가입
+              Sign up
             </Link>
           </li>
           <li>
             <Link className='header-nav-item' to='/login'>
-              로그인
+              Login
             </Link>
           </li>
         </ul>

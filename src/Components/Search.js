@@ -15,11 +15,11 @@ function Search({ onSearch }) {
     <div className='content-search'>
         <input type='text'
         id='content-search'
-        placeholder='검색어를 입력해주세요.'
+        placeholder='Please enter a search term'
         className='input-text'
         value={searchText}
         onChange={handleInputChange}></input>
-        <button className='search-button' onClick={handleSearch}>검색</button>
+        <button className='search-button' onClick={handleSearch}>Search</button>
     </div>
   );
 }

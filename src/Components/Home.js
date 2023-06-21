@@ -10,6 +10,7 @@ function Home() {
   return (
     <>
     <Header />
+      <div style={{ marginBottom: "3rem" }}></div> {/* 간격을 주기 위한 빈 div */}
     <Slide />
     <Grid />
     <Footer />

@@ -18,11 +18,11 @@ const CommunityModal = ( {show, onHide}) => {
         content: content,
       })
       .then(() => {
-        alert("저장되었습니다!");
+        alert("Your save was successful");
       })
 
       .catch(function (error) {
-        alert("저장에 실패했습니다!");
+        alert("Your save was failed");
       });
   };
 
@@ -37,13 +37,13 @@ const CommunityModal = ( {show, onHide}) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          커뮤니티 글 작성
+          community board write
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>제목</Form.Label>
+              <Form.Label>title</Form.Label>
               <Form.Control
                 type="title"
                 value={title}
@@ -54,7 +54,7 @@ const CommunityModal = ( {show, onHide}) => {
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
-              <Form.Label>내용</Form.Label>
+              <Form.Label>content</Form.Label>
               <Form.Control 
               value={content}
               as="textarea" rows={9} />
@@ -62,8 +62,8 @@ const CommunityModal = ( {show, onHide}) => {
           </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant='secondary' onClick={onHide}>닫기</Button>
-        <Button variant='primary' onClick={ handleSubmit /* onHide */}>저장</Button>
+        <Button variant='secondary' onClick={onHide}>close</Button>
+        <Button variant='primary' onClick={ handleSubmit /* onHide */}>submit</Button>
       </Modal.Footer>
     </Modal>
   )

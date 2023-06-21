@@ -106,13 +106,13 @@ const GetData = () => {
         <input
           type='text'
           id='content-search'
-          placeholder='검색어를 입력해주세요.'
+          placeholder='Put on the Business Manage Place In Korean'
           className='input-text'
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button className='search-button' onClick={handleSearch}>
-          검색
+          Search
         </button>
       </div>
       <table className='common-table'>
