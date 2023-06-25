@@ -46,7 +46,7 @@ function Community() {
         <h2>Community</h2>
         <div className='content-search'>
           <input type='text' id='content-search' placeholder='Please enter a search word' className='input-text'></input>
-          <button className='search-button'>Serch</button>
+          <button className='search-button'>Search</button>
         </div>
         <div className='add-btn'>
           <button className='add-button' onClick={handleButtonClick}><img src={add} alt='add'></img>Write</button>
