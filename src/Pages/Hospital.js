@@ -2,12 +2,13 @@ import React from 'react'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import "../CSS/Hospital.css";
-import CommunityItem from '../Components/CommunityItem';
+import Kakao from '../Components/Kakao';
 
 function Hospital() {
   return (
     <>
     <Header />
+    <Kakao />
     <Footer />
     </>
     
