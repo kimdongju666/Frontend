@@ -77,6 +77,7 @@ const GetData = () => {
       });
   }, []);
 
+
   /* const handleSearch = () => {
     // 테이블에서 검색을 수행하는 로직 작성
     // 검색된 결과를 새로운 배열로 필터링하고 해당 배열을 테이블에 표시
@@ -99,20 +100,26 @@ const GetData = () => {
     setData(filteredData);
   };
 
-
   return (
     <>
+      <div>
+      <br/>
+      <h5>[Guide Line]</h5>
+      <p>Search for the Business Manage Place area you want to know below and copy the Business Name you're curious about
+      <br/>
+      <a href={'https://map.naver.com/'}>NaverMap</a> Click NaverMap to go to the next link, paste it into the search box, and check the location</p>
+      </div>
       <div className='content-search'>
         <input
           type='text'
           id='content-search'
-          placeholder='검색어를 입력해주세요.'
+          placeholder='Put on the Business Manage Place In Korean'
           className='input-text'
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button className='search-button' onClick={handleSearch}>
-          검색
+          Search
         </button>
       </div>
       <table className='common-table'>
