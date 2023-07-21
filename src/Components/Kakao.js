@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Map, MapMarker } from 'react-kakao-maps-sdk';
 
@@ -45,6 +46,49 @@ function Kakao() {
       }))
     }
   }, [])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // 주소 데이터를 가져오기 위한 Axios 요청
+        const response = await axios.get("/hospital");
+        const addresses = response.data.data; // 가져온 주소 데이터
+        const parsedAddresses = addresses.map((item) => item.ADRES);
+        console.log(parsedAddresses)
+
+        // 카카오맵 API 초기화
+        window.kakao.maps.load(() => {
+          const container = document.getElementById("map"); // 지도를 표시할 DOM 엘리먼트
+          const options = {
+            center: new window.kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심 좌표
+            level: 8, // 지도 확대 레벨
+          };
+          const map = new window.kakao.maps.Map(container, options);
+
+          // 주소 데이터를 이용하여 장소 표시
+          const geocoder = new window.kakao.maps.services.Geocoder();
+          parsedAddresses.forEach(async (address) => {
+            try {
+              const result = await geocoder.addressSearch(address);
+              if (result && result.length > 0) {
+                const position = new window.kakao.maps.LatLng(result[0].y, result[0].x);
+                const marker = new window.kakao.maps.Marker({
+                  position,
+                });
+                marker.setMap(map);
+              }
+            } catch (error) {
+              console.log(error);
+            }
+          });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>

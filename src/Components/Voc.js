@@ -70,7 +70,7 @@ const GetData = () => {
       .get('/open-api')
       .then((response) => {
         setData(response.data.data);
-        console.log(response.data);
+        console.log(response.data.data);
       })
       .catch((error) => {
         console.error(error);
