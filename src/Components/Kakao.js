@@ -1,8 +1,9 @@
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
 import { Map, MapMarker } from 'react-kakao-maps-sdk';
 
-const {kakao} = window;
+
+const { kakao } = window;
 
 function Kakao() {
 
@@ -13,54 +14,106 @@ function Kakao() {
     },
     errMsg: null,
     isLoading: true,
-  })
+  });
 
   useEffect(() => {
     if (navigator.geolocation) {
-      // GeoLocation을 이용해서 접속 위치를 얻어옵니다
       navigator.geolocation.getCurrentPosition(
         (position) => {
           setState((prev) => ({
             ...prev,
             center: {
-              lat: position.coords.latitude, // 위도
-              lng: position.coords.longitude, // 경도
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
             },
             isLoading: false,
-          }))
+          }));
         },
         (err) => {
           setState((prev) => ({
             ...prev,
             errMsg: err.message,
             isLoading: false,
-          }))
+          }));
         }
-      )
+      );
     } else {
-      // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
       setState((prev) => ({
         ...prev,
-        errMsg: "geolocation을 사용할수 없어요..",
+        errMsg: 'geolocation을 사용할 수 없어요..',
         isLoading: false,
-      }))
+      }));
     }
-  }, [])
-
+  }, []);
   useEffect(() => {
-    const fetchData = async () => {
+    // 지도 초기화 및 마커 표시하는 함수
+    const initializeMap = async () => {
       try {
-        // 주소 데이터를 가져오기 위한 Axios 요청
-        const response = await axios.get("/hospital");
-        const addresses = response.data.data; // 가져온 주소 데이터
+        const response = await axios.get('/hospital');
+        const addresses = response.data.data.ADRES;
+        console.log(addresses);
         const parsedAddresses = addresses.map((item) => item.ADRES);
-        console.log(parsedAddresses)
 
         // 카카오맵 API 초기화
         window.kakao.maps.load(() => {
-          const container = document.getElementById("map"); // 지도를 표시할 DOM 엘리먼트
+          const container = document.getElementById('map'); // 지도를 표시할 DOM 엘리먼트
           const options = {
-            center: new window.kakao.maps.LatLng(37.5665, 126.9780), // 지도 중심 좌표
+            center: new window.kakao.maps.LatLng(state.center.lat, state.center.lng), // 지도 중심 좌표 (현위치)
+            level: 8, // 지도 확대 레벨
+          };
+          const map = new window.kakao.maps.Map(container, options);
+
+          // 주소 데이터를 이용하여 장소 표시
+          const geocodeWithPromise = (address) => {
+            return new Promise((resolve, reject) => {
+              const geocoder = new window.kakao.maps.services.Geocoder();
+              geocoder.addressSearch(address, (result, status) => {
+                if (status === window.kakao.maps.services.Status.OK) {
+                  resolve(result[0]);
+                } else {
+                  reject(status);
+                }
+              });
+            });
+          };
+
+
+          Promise.all(parsedAddresses.map(geocodeWithPromise))
+            .then((results) => {
+              results.forEach((result) => {
+                const position = new window.kakao.maps.LatLng(result.y, result.x);
+                const marker = new window.kakao.maps.Marker({
+                  position,
+                });
+                marker.setMap(map);
+              });
+            })
+            .catch((error) => {
+              console.log('Geocoding Error:', error);
+            });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    // Map 컴포넌트가 렌더링된 이후에 Kakao Map API 초기화 함수 호출
+    initializeMap();
+  }, [state.center]);
+
+  /* useEffect(() => {
+    // 지도 초기화 및 마커 표시하는 함수
+    const initializeMap = async () => {
+      try {
+        const response = await axios.get('/hospital');
+        const addresses = response.data.data;
+        const parsedAddresses = addresses.map((item) => item.ADRES);
+
+        // 카카오맵 API 초기화
+        window.kakao.maps.load(() => {
+          const container = document.getElementById('map'); // 지도를 표시할 DOM 엘리먼트
+          const options = {
+            center: new window.kakao.maps.LatLng(state.center.lat, state.center.lng), // 지도 중심 좌표 (현위치)
             level: 8, // 지도 확대 레벨
           };
           const map = new window.kakao.maps.Map(container, options);
@@ -87,30 +140,31 @@ function Kakao() {
       }
     };
 
-    fetchData();
-  }, []);
-
+    // Map 컴포넌트가 렌더링된 이후에 Kakao Map API 초기화 함수 호출
+    initializeMap();
+  }, [state.center]);
+ */
   return (
     <>
       <Map // 지도를 표시할 Container
         center={state.center}
         style={{
           // 지도의 크기
-          width: "100%",
-          height: "800px",
+          width: '100%',
+          height: '800px',
         }}
         level={3} // 지도의 확대 레벨
       >
         {!state.isLoading && (
           <MapMarker position={state.center}>
-            <div style={{ padding: "5px", color: "#000" }}>
-              {state.errMsg ? state.errMsg : "여기에 계신가요?!"}
+            <div style={{ padding: '5px', color: '#000' }}>
+              {state.errMsg ? state.errMsg : '여기에 계신가요?!'}
             </div>
           </MapMarker>
         )}
       </Map>
     </>
-  )
+  );
 }
 
-export default Kakao
+export default Kakao;
