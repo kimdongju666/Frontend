@@ -15,13 +15,17 @@ import Hospital from '../Images/hospital.png';
 
 function SliderContainer() {
 
-const swiperStyle = {
-  position : "relative",
-  width: "1400px",
-  height : "465px",
-}
+    const swiperStyle = {
+        position: "relative",
+        width: "1390px",
+        height: "450px",
+        border: "1px solid black",
+        borderRadius: "40px",
+        boxShadow: "0 0 5px rgba(0, 0, 0, 0.2)",
+        backgroundColor : "rgba(0, 115, 225)",
+    };
 const wrapperStyle = {
-  backgroundColor : "rgba(35, 115, 225)",
+
 /*  */
 }
 const slideStyle = {
@@ -41,7 +45,7 @@ const slideStyle = {
           delay: 1000000,
           disableOnInteraction: false,
         }}
-        spaceBetween={10}
+        spaceBetween={25}
         slidesPerView={3}
         centeredSlides={true}
         navigation={{

@@ -24,7 +24,7 @@ function Login() {
       })
       .then((response) => {
         console.log(response);
-        alert("로그인에 성공했습니다");
+        alert("Login successful");
         localStorage.setItem("id", response.data.data.userid);
         localStorage.setItem("pw", response.data.data.password);
         localStorage.setItem("username", response.data.data.username);
@@ -33,7 +33,7 @@ function Login() {
       })
 
       .catch(function (error) {
-        alert("로그인에 실패했습니다!");
+        alert("Login failed");
       });
   };
 
@@ -69,32 +69,32 @@ function Login() {
     <>
       <Header />
       <div className="page">
-        <div className="titleWrap">로그인</div>
+        <div className="titleWrap">Login</div>
         <div className="contentWrap">
-          <div className="inputTitle">아이디</div>
+          <div className="inputTitle">Id</div>
           <div className="inputWrap">
             <input
               type="text"
               className="input"
-              placeholder="4~12자 영문소문자, 숫자 입력"
+              placeholder="Enter 4-12 English lowercase letters and numbers"
               value={userid}
               onChange={handleId}
             />
           </div>
           <div className="errorMessage">
             {!idValid && userid.length > 0 && (
-              <div>올바른 아이디를 입력해주세요.</div>
+              <div>Please enter a valid ID</div>
             )}
           </div>
 
           <div style={{ marginTop: "26px" }} className="inputTitle">
-            비밀번호
+            Password
           </div>
           <div className="inputWrap">
             <input
               type="password"
               className="input"
-              placeholder="영문대소문자, 숫자, 특수문자 포함 8자 이상 입력"
+              placeholder="Enter at least 8 characters, including case, number, and special characters"
               value={password}
               onChange={handlePw}
             />
@@ -102,7 +102,7 @@ function Login() {
           <div className="errorMessage">
             {!pwValid && password.length > 0 && (
               <div>
-                영문대소문자, 숫자, 특수문자 포함 8자 이상 입력해주세요.
+                Enter at least 8 characters, including case, number, and special characters
               </div>
             )}
           </div>
@@ -112,7 +112,7 @@ function Login() {
           onClick={onSubmitHandler}
           className="bottomButton"
         >
-          확인
+          Login
         </button>
       </div>
 

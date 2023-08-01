@@ -26,11 +26,11 @@ function SignIn() {
         email: email,
       })
       .then(() => {
-        alert("회원가입에 성공했습니다!");
+        alert("You have successfully registered!");
       })
 
       .catch(function (error) {
-        alert("회원가입에 실패했습니다!");
+        alert("Failed to register as a member!");
       });
   };
 
@@ -83,40 +83,40 @@ function SignIn() {
     <>
       <Header />
       <div className="page">
-        <div className="titleWrap">회원 가입</div>
+        <div className="titleWrap">Sign up</div>
 
         <div className="contentWrap">
-          <div className="inputTitle">이름</div>
+          <div className="inputTitle">Name</div>
           <div className="inputWrap">
             <input
               type="text"
               className="input"
-              placeholder="홍길동"
+              placeholder="kevin"
               value={username}
               onChange={handleName}
             />
           </div>
           <div className="errorMessage">
             {!nameValid && username.length > 0 && (
-              <div>올바른 이름을 입력해주세요.</div>
+              <div>Please enter a valid name</div>
             )}
           </div>
 
           <div style={{ marginTop: "26px" }} className="inputTitle">
-            아이디
+            Id
           </div>
           <div className="inputWrap">
             <input
               type="text"
               className="input"
-              placeholder="4~12자 영문소문자, 숫자 입력"
+              placeholder="Enter 4-12 English lowercase letters and numbers"
               value={userid}
               onChange={handleId}
             />
           </div>
           <div className="errorMessage">
             {!idValid && userid.length > 0 && (
-              <div>올바른 아이디를 입력해주세요.</div>
+              <div>Please enter a valid ID</div>
             )}
           </div>
 
@@ -134,18 +134,18 @@ function SignIn() {
           </div>
           <div className="errorMessage">
             {!emailValid && email.length > 0 && (
-              <div>올바른 Email을 입력해주세요.</div>
+              <div>Please enter a valid Email</div>
             )}
           </div>
 
           <div style={{ marginTop: "26px" }} className="inputTitle">
-            비밀번호
+            password
           </div>
           <div className="inputWrap">
             <input
               type="password"
               className="input"
-              placeholder="영문대소문자, 숫자, 특수문자 포함 8자 이상 입력"
+              placeholder="Enter at least 8 characters, including case, number, and special characters"
               value={password}
               onChange={handlePw}
             />
@@ -153,7 +153,7 @@ function SignIn() {
           <div className="errorMessage">
             {!pwValid && password.length > 0 && (
               <div>
-                영문대소문자, 숫자, 특수문자 포함 8자 이상 입력해주세요.
+                Enter at least 8 characters, including case, number, and special characters
               </div>
             )}
           </div>
@@ -163,7 +163,7 @@ function SignIn() {
           onClick={onSubmitHandler}
           className="bottomButton"
         >
-          확인
+          submit
         </button>
       </div>
 

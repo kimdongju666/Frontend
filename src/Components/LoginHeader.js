@@ -31,38 +31,38 @@ function LoginHeader() {
         <ul class = "center">
           <li>
             <Link className='hospital' to='/hospital'>
-              내 근처 진료소
+              Industrial aid hospital
             </Link>
           </li>
           <li>
             <Link className='solution' to='/solution'>
-              산재 예방 방법
+              Industrial Accident Prevention Manual
             </Link>
           </li>
           <li>
             <Link className='danger' to='/danger'>
-              위험성 평가
+              Dangerous Safety Workplace
             </Link>
           </li>
           <li>
             <Link className='community' to='/community'>
-              커뮤니티
+              Community
             </Link>
           </li>
         </ul>
         
-        <p>{localStorage.getItem('username')}님 어서오세요!<button /* variant='primary' */ className="logout" onClick={ handleShow }>Logout</button></p>
+        <p>{localStorage.getItem('username')} hello!<button /* variant='primary' */ className="logout" onClick={ handleShow }>Logout</button></p>
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Logout 확인</Modal.Title>
+          <Modal.Title>Logout check</Modal.Title>
         </Modal.Header>
-        <Modal.Body>로그아웃 하시겠습니까?</Modal.Body>
+        <Modal.Body>Do you want to log out?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            취소
+            cancel
           </Button>
           <Button variant="primary" onClick={onLogout}>
-            확인
+            ok
           </Button>
         </Modal.Footer>
       </Modal>
