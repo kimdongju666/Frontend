@@ -11,6 +11,9 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
 import Hospital from '../Images/hospital.png';
+import Safety from '../Images/safety.png';
+import Manual from '../Images/manual.png';
+import Community from '../Images/community.png';
 
 
 function SliderContainer() {
@@ -58,10 +61,18 @@ const slideStyle = {
 
         
       >
-        <SwiperSlide style={slideStyle}></SwiperSlide>
-        <SwiperSlide style={slideStyle}>Slide 2</SwiperSlide>
-        <SwiperSlide style={slideStyle}>Slide 3</SwiperSlide>
-        <SwiperSlide style={slideStyle}>Slide 4</SwiperSlide>
+        <SwiperSlide style={slideStyle}>
+          <img src={Hospital} alt="hospital" style={{width: '400px', height: '300px'}}/>
+        </SwiperSlide>
+        <SwiperSlide style={slideStyle}>
+          <img src={Safety} alt="safety" style={{width: '400px', height: '300px'}}/>
+        </SwiperSlide>
+        <SwiperSlide style={slideStyle}>
+          <img src={Manual} alt="manual" style={{width: '400px', height: '300px'}}/>
+        </SwiperSlide>
+        <SwiperSlide style={slideStyle}>
+          <img src={Community} alt="community" style={{width: '400px', height: '300px'}}/>
+        </SwiperSlide>
       </Swiper>
     </div>
   );
