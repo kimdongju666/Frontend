@@ -11,7 +11,6 @@ import Danger from './Pages/Danger';
 import Community from './Pages/Community';
 import LoginHeader from './Components/LoginHeader';
 import LoginHome from './Components/LoginHome';
-import Suggestions from './Pages/Suggestions';
 import ScrollToTop from './ScrollTop';
 
 
@@ -36,7 +35,6 @@ function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/loginheader" element={<LoginHeader />} />
           <Route path="/loginhome" element={<LoginHome />} />
-          <Route path="/suggestions" element={<Suggestions />} />
         </Routes>
       </div>
       </BrowserRouter>
