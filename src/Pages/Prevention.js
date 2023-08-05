@@ -23,9 +23,11 @@ function Solution() {
   return (
     <>
     <Header />
-    <div className="App">
-      <button onClick={fetchPdf}>Fetch PDF</button>
-      {pdfData && <iframe src={pdfData} title='PDF Viewer' type="application/pdf" width="100%" height="600px" />}
+    <div className="App" >
+      <div className="container">
+        <button onClick={fetchPdf}>Fetch PDF</button>
+        {pdfData && <iframe src={pdfData} title='PDF Viewer' type="application/pdf" width="100%" height="600px" />}
+      </div>
     </div>
     <Footer />
     </>

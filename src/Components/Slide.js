@@ -2,7 +2,6 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import '../CSS/Slide.css'
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -14,6 +13,7 @@ import Hospital from '../Images/hospital.png';
 import Safety from '../Images/safety.png';
 import Manual from '../Images/manual.png';
 import Community from '../Images/community.png';
+import { useNavigate } from "react-router-dom";
 
 
 function SliderContainer() {
@@ -39,6 +39,21 @@ const slideStyle = {
   height : "300px",
 }
 
+const navigate = useNavigate();
+
+const moveHospital = () => {
+  navigate("/hospital");
+}
+const movePrevention = () => {
+  navigate("/prevention");
+}
+const moveSafety = () => {
+  navigate("/safety");
+}
+const moveCommunity = () => {
+  navigate("/hospital");
+}
+
 
   return (
     <div className="wrapper" style={wrapperStyle}>
@@ -62,16 +77,16 @@ const slideStyle = {
         
       >
         <SwiperSlide style={slideStyle}>
-          <img src={Hospital} alt="hospital" style={{width: '400px', height: '300px'}}/>
+          <img src={Hospital} alt="hospital" onClick={moveHospital} style={{width: '400px', height: '300px', cursor: 'pointer'}}/>
         </SwiperSlide>
         <SwiperSlide style={slideStyle}>
-          <img src={Safety} alt="safety" style={{width: '400px', height: '300px'}}/>
+          <img src={Manual} alt="safety" onClick={movePrevention} style={{width: '400px', height: '300px', cursor: 'pointer'}}/>
         </SwiperSlide>
         <SwiperSlide style={slideStyle}>
-          <img src={Manual} alt="manual" style={{width: '400px', height: '300px'}}/>
+          <img src={Safety} alt="manual" onClick={moveSafety} style={{width: '400px', height: '300px', cursor: 'pointer'}}/>
         </SwiperSlide>
         <SwiperSlide style={slideStyle}>
-          <img src={Community} alt="community" style={{width: '400px', height: '300px'}}/>
+          <img src={Community} alt="community" onClick={moveCommunity} style={{width: '400px', height: '300px', cursor: 'pointer'}}/>
         </SwiperSlide>
       </Swiper>
     </div>

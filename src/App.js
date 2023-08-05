@@ -6,8 +6,8 @@ import SignIn from './Components/SignIn';
 import Login from './Components/Login';
 import Home from './Components/Home';
 import Hospital from './Pages/Hospital';
-import Solution from './Pages/Solution';
-import Danger from './Pages/Danger';
+import Prevention from './Pages/Prevention';
+import Safety from './Pages/Safety';
 import Community from './Pages/Community';
 import LoginHeader from './Components/LoginHeader';
 import LoginHome from './Components/LoginHome';
@@ -30,8 +30,8 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/login" element={<Login />} />
           <Route path="/hospital" element={<Hospital />} />
-          <Route path="/solution" element={<Solution />} />
-          <Route path="/danger" element={<Danger />} />
+          <Route path="/prevention" element={<Prevention />} />
+          <Route path="/safety" element={<Safety />} />
           <Route path="/community" element={<Community />} />
           <Route path="/loginheader" element={<LoginHeader />} />
           <Route path="/loginhome" element={<LoginHome />} />

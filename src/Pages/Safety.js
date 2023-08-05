@@ -14,11 +14,11 @@ function Danger() {
     <div className='container'>
       <div className='inner'>
         <h2>Dangerous Safety Workplace</h2>
-        {/* <Search /> */}
-        {/* <div className='content-search'>
+        <Search />
+        <div className='content-search'>
           <input type='text' id='content-search' placeholder='검색어를 입력해주세요.' className='input-text'></input>
           <button className='search-button'>검색</button>
-        </div> */}
+        </div>
 
         <Voc />
       </div>
