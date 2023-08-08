@@ -35,12 +35,12 @@ function LoginHeader() {
             </Link>
           </li>
           <li>
-            <Link className='solution' to='/solution'>
+            <Link className='prevention' to='/prevention'>
               Industrial Accident Prevention Manual
             </Link>
           </li>
           <li>
-            <Link className='danger' to='/danger'>
+            <Link className='safety' to='/safety'>
               Dangerous Safety Workplace
             </Link>
           </li>
